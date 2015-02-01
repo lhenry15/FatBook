@@ -1,10 +1,12 @@
 {
-  "name": "消夜文退散!!!",
-  "version": "0.5",
+  "name": "宵夜文退散！！！",
+  "version": "0.9",
   "manifest_version": 2,
-  "description": "受不了三更半夜辛苦唸書coding的時候看到無良的雞排生魚片牛排泡麵了嗎？快安裝「宵夜文退散」Chrome Extensions，幫助你遠離宵夜文！",
-  "icons": {
-    "16": "icons/fatbook logo-12.png"
+  "description": "受不了三更半夜辛苦唸書coding的時候看到無良的雞排生魚片牛排泡麵了嗎？快安裝「宵夜文退散」Chrome Extensions，幫助你遠離萬惡的宵夜文！",
+  "icons" : {
+     "128" : "icons/fatbook_logo-128.png",
+     "48" : "icons/fatbook_logo-48.png",
+     "16" : "icons/fatbook_logo-16_2.png"
   },
   "web_accessible_resources": ["images/kp.jpg","images/fatpic-01.jpg"],
   "browser_action": 
@@ -12,13 +14,14 @@
     "default_popup": "page.html",
     "default_icon":
       {
-        "67": "icons/fatbook logo-12.png"
+        "38": "icons/fatbook_logo_icon.png"
       }
   },
   "content_scripts": [
     {
       "matches": [
-        "https://www.facebook.com/*"
+        "http://*/*",
+        "https://*/*"
       ],
       "css": [
         "css/kp-highlight.css"

@@ -1,3 +1,13 @@
+var start_time = 0;
+var end_time = 23;
+
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    start_time = request.start_time;
+    end_time = request.end_time;
+    alert("你所設定的開始時間是：" + start_time + " , 結束時間是： " + end_time);
+  });
+
 
 (function() {
   var DEBUG, KpIsEverywhere, MutationObserver, googleKey, ignoreClass, image_url, kp_url, public_spreadsheet_url, render, templates, throttle, xx,
@@ -26,6 +36,7 @@
 
   nofatimage = function(){
     var template;
+
     template = templates[Math.floor(Math.random() * templates.length)];
     return template;
   };
@@ -245,15 +256,16 @@
       var hour = time.getHours();
 
       //設定開啟時間～～～
-//      if(hour>22 || hour<12){
-        if(1){
+      var judgement = (start_time < end_time ? (hour>start_time && hour<end_time) : (hour>start_time || hour<end_time));
+      if(judgement){
       //用來更改目標物件的class name，變成kp-highlight
         $scope.highlight(keyword, { //keyword.text
           classname: 'kp-highlight',
           tag: 'div',
           ignoreClass: ignoreClass
         }, function(div) {
-                var x=$(div).parent(); 
+            //  console.log($(div).parent().parent().attr("class"));
+              var x=$(div).parent(); 
     //                console.log(x.attr("class"));
                 if(x.attr("class")==="text_exposed_show"){
                      x.parent().parent().parent().parent().find("div.mtm").find("img").attr("src",nofatimage).removeAttr( 'style' );;
@@ -264,7 +276,7 @@
                      x.parent().parent().find("div.mtm").find("img").attr("src",nofatimage).removeAttr( 'style' );
                 }
                 return div;
-                }
+           }
         );
       }
       return this.observe();

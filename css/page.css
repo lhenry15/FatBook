@@ -1,0 +1,46 @@
+body {
+font-family: arial;
+font-size: 13pt;
+margin: 0;
+padding: 20px;
+color: #06477D;
+}
+
+html, body{
+	height:150px;
+	width:250px;
+}
+
+img{
+	padding-left: 65px; 
+}
+
+h1{
+	padding: 0 0 10px 0;
+	margin: 0;
+}
+
+ul {
+list-style-type: none;
+cursor: pointer;
+padding: 0;
+margin: 0;
+}
+
+li {
+text-align: center;
+padding: 5px 20px;
+}
+
+li:hover {
+background: #06477D;
+color: white;
+}
+
+textarea#info {
+position: absolute;
+}
+
+input#start, input#end{
+  width: 40px;
+}
