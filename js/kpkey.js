@@ -22,7 +22,7 @@
   //   return "http://kptaipei.tw/?page_id=" + kpid;
   // };
 
-  templates=["http://i.ytimg.com/vi/KjgenNLgNcw/maxresdefault.jpg", "https://i.imgur.com/fWLBbjh.jpg", "http://i.dailymail.co.uk/i/pix/2014/08/05/1407225932091_wps_6_SANTA_MONICA_CA_AUGUST_04.jpg"]
+  templates=["http://lhenry15.github.io/Fatbook/images/fatpic-01.jpg", "http://lhenry15.github.io/Fatbook/images/fatpic-02.jpg", "http://lhenry15.github.io/Fatbook/images/fatpic-03.jpg","http://lhenry15.github.io/Fatbook/images/fatpic-04.jpg","http://lhenry15.github.io/Fatbook/images/fatpic-05.jpg","http://lhenry15.github.io/Fatbook/images/fatpic-06.jpg","http://lhenry15.github.io/Fatbook/images/fatpic-07.jpg"]
 
   nofatimage = function(){
     var template;
