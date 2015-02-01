@@ -1,14 +1,20 @@
 {
-  "name": "柯文哲關鍵字小測試",
-  "version": "0.0.6",
+  "name": "宵夜文退散！！！",
+  "version": "0.5",
   "manifest_version": 2,
-  "description": "柯文哲會測試你的網頁",
+  "description": "受不了三更半夜辛苦唸書coding的時候看到無良的雞排生魚片牛排泡麵了嗎？快安裝「宵夜文退散」Chrome Extensions，幫助你遠離宵夜文！",
   "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
+    "16": "icons/icon.png"
   },
   "web_accessible_resources": ["images/kp.jpg","images/fatpic-01.jpg"],
+  "browser_action": 
+  {
+    "default_popup": "page.html",
+    "default_icon":
+      {
+        "19": "icons/icon.png"
+      }
+  },
   "content_scripts": [
     {
       "matches": [

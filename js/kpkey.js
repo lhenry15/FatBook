@@ -1,8 +1,10 @@
+
 (function() {
   var DEBUG, KpIsEverywhere, MutationObserver, googleKey, ignoreClass, image_url, kp_url, public_spreadsheet_url, render, templates, throttle, xx,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   DEBUG = false;
+
 
   MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
 
@@ -239,36 +241,33 @@
       }
       this.unobserve();
       xx("found " + keyword); //keyword.text
+
+      var time = new Date();
+      var hour = time.getHours();
+
+      //設定開啟時間～～～
+//      if(hour>22 || hour<12){
+        if(1){
       //用來更改目標物件的class name，變成kp-highlight
-      $scope.highlight(keyword, { //keyword.text
-        classname: 'kp-highlight',
-        tag: 'div',
-        ignoreClass: ignoreClass
-      }, function(div) {
-          //  console.log($(div).parent().parent().attr("class"));
+        $scope.highlight(keyword, { //keyword.text
+          classname: 'kp-highlight',
+          tag: 'div',
+          ignoreClass: ignoreClass
+        }, function(div) {
             var x=$(div).parent(); 
                
 //                console.log(x.attr("class"));
                 if(x.attr("class")==="text_exposed_show"){
-                    x.parent().parent().parent().parent().find("div.mtm").find("img").attr("src",nofatimage);   
+//                    x.parent().parent().parent().parent().find("div.mtm").find("img").attr("src",nofatimage);   
+                     x.parent().parent().parent().parent().find("div.mtm").find("img").attr("src","http://lhenry15.github.io/Fatbook/images/fatpic-01.jpg");
                 }else{
-                    x.parent().parent().find("div.mtm").find("img").attr("src",nofatimage);
+//                    x.parent().parent().find("div.mtm").find("img").attr("src",nofatimage);
+                    x.parent().parent().find("div.mtm").find("img").attr("src","http://lhenry15.github.io/Fatbook/images/fatpic-01.jpg");
                 }
-//                console.log(x.parent().find("div.mtm").find("img").attr("class"));
-            
-//                if(x.attr("class")==="_5pbx userContent"){
-//             // console.log(x.attr("class"));  
-//              if(x.find(".text_exposed_root")){
-////                console.log(x.parent().parent().find("img._46-i").attr("alt"));      
-//              }else{
-//                console.log(x.parent().find("img._46-i").attr("alt"));
-//              }
-////             $(div).parent().parent().parent().find("img._46-i").attr("src","images/fatpic-01.jpg"); 
-////               x.parent().find("img._46-i img").remove();
-////               x.parent().find("div._46-h _4-ep").remove();
-            return div;
-         }
-      );
+              return div;
+           }
+        );
+      }
       return this.observe();
     };
 
@@ -280,7 +279,7 @@
     $(this).each(function(i, scope) {
       var $scope, kpkey;
 
-      $scope = jQuery(scope);
+      $scope = $(scope);
       if (!$scope.data('kpkey')) {
         kpkey = new KpIsEverywhere({
           scope: $scope

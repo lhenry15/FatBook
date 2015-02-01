@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>宵夜文退散！！！</title>
+		<script src="js/jquery-2.1.1.min.js"></script>
+		<script>
+			chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+  				chrome.tabs.sendMessage(tabs[0].id, {greeting: "hello"}, function(response) {
+    				alert(response.farewell);
+  				});
+			});
+		</script>
+	</head>
+	<body>
+	 	<h1>宵夜文退散！！！</h1>
+	 	<div class="input">
+		 	從<input type="number" name="開始時間" size="1">點<br>開始退散
+		 	到<input type="number" name="結束時間" size="1">結束
+		 	<input type="submit" value="退散">
+		</div>
+		
+	</body>
+</html> 
