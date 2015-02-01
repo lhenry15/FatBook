@@ -1,0 +1,30 @@
+{
+  "name": "柯文哲關鍵字小測試",
+  "version": "0.0.6",
+  "manifest_version": 2,
+  "description": "柯文哲會測試你的網頁",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": ["images/kp.jpg","images/fatpic-01.jpg"],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "css": [
+        "css/kp-highlight.css"
+      ],
+      "js": [
+        "js/jquery-2.1.1.min.js",
+        "js/tabletop.js",
+        "js/highlight.js",
+        "js/kpkey.js",
+        "js/inject.js"
+      ]
+    }
+  ]
+}
