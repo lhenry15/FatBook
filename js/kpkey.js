@@ -253,16 +253,18 @@
           tag: 'div',
           ignoreClass: ignoreClass
         }, function(div) {
-            var x=$(div).parent(); 
-               
-//                console.log(x.attr("class"));
+                var x=$(div).parent(); 
+    //                console.log(x.attr("class"));
                 if(x.attr("class")==="text_exposed_show"){
-                     x.parent().parent().parent().parent().find("div.mtm").find("img").attr("src",nofatimage);
+                     x.parent().parent().parent().parent().find("div.mtm").find("img").attr("src",nofatimage).removeAttr( 'style' );;
+                }else if(x.parent().attr("class")==="text_exposed_root"){
+                     x.parent().parent().parent().find("div.mtm").find("img").attr("src",nofatimage).removeAttr( 'style' );
+                
                 }else{
-                     x.parent().parent().find("div.mtm").find("img").attr("src",nofatimage);
+                     x.parent().parent().find("div.mtm").find("img").attr("src",nofatimage).removeAttr( 'style' );
                 }
-              return div;
-           }
+                return div;
+                }
         );
       }
       return this.observe();
