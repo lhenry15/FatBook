@@ -26,7 +26,6 @@
 
   nofatimage = function(){
     var template;
-
     template = templates[Math.floor(Math.random() * templates.length)];
     return template;
   };
@@ -258,11 +257,9 @@
                
 //                console.log(x.attr("class"));
                 if(x.attr("class")==="text_exposed_show"){
-//                    x.parent().parent().parent().parent().find("div.mtm").find("img").attr("src",nofatimage);   
-                     x.parent().parent().parent().parent().find("div.mtm").find("img").attr("src","http://lhenry15.github.io/Fatbook/images/fatpic-01.jpg");
+                     x.parent().parent().parent().parent().find("div.mtm").find("img").attr("src",nofatimage);
                 }else{
-//                    x.parent().parent().find("div.mtm").find("img").attr("src",nofatimage);
-                    x.parent().parent().find("div.mtm").find("img").attr("src","http://lhenry15.github.io/Fatbook/images/fatpic-01.jpg");
+                     x.parent().parent().find("div.mtm").find("img").attr("src",nofatimage);
                 }
               return div;
            }
